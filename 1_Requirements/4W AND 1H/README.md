@@ -9,11 +9,15 @@ WHY:<br>
 WHAT:<br>
     ->This is to maintain customer details.<br>
     ->This is to maintain new entery of the items.<br>
-    ->This is to maintain records of available items<br>
-    ->There will be description of new items<br>
+    ->This is to maintain records of available items.<br>
+    ->There will be description of new items.<br>
    
    
   
+WHERE:<br>
+    ->Departmental Stores.<br>
+    
 		 
 		 
-		 
+WHEN:<br>
+    ->It is used while Billing the products.<br> 
