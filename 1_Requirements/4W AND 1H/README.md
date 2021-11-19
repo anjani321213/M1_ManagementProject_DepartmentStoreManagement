@@ -21,3 +21,8 @@ WHERE:<br>
 		 
 WHEN:<br>
     ->It is used while Billing the products.<br> 
+    
+    
+    
+HOW:<br>
+    ->This application is for Ordering and billing of Departmental store<br>
