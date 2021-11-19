@@ -1,6 +1,6 @@
 STRENGTH:<br>
         ->It will reduce the Man Power and reduce the time.<hr>
-        -
+        
 WEAKNESS:<br>
         ->It is automated but we have to update the items present in the store.<hr>
         
