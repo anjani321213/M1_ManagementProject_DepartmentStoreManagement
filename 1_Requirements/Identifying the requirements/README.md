@@ -1,12 +1,12 @@
-->HARDWARE REQUIREMENTS:<hr>
-             ->Intel Processor<hr>
-             ->RAM 4GB<hr>
+->HARDWARE REQUIREMENTS:<br>
+             ->Intel Processor<br>
+             ->RAM 4GB<br>
              ->Windows10 or Linux<hr>
              
              
              
-->SOFTWARE REQUIREMENTS:<HR>
-            ->Google Chrome<hr>
+->SOFTWARE REQUIREMENTS:<br>
+            ->Google Chrome<br>
             ->Github<hr>
    
-->LANGUAGE USED:C Language<hr>
+->LANGUAGE USED:C Language<br>
