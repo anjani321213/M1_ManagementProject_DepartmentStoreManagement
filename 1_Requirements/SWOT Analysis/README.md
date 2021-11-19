@@ -7,5 +7,5 @@ WEAKNESS:<br>
 THEADS:<br>
         ->When you entered the input which is not present in database then some there problems will occurs.<hr>
         
-OPPORTUNITIES:
+OPPORTUNITIES:<br>
         ->It will increase the grass sell of the owner and the man power also reduces.<hr>
