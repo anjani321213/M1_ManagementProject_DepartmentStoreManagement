@@ -1,4 +1,4 @@
-*HARDWARE REQUIREMENTS:<hr>
+HARDWARE REQUIREMENTS:<hr>
              Intel Processor<hr>
              RAM 4GB<hr>
              Windows10 or Linux<hr>
