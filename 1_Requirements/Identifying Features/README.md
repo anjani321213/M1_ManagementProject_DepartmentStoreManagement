@@ -1,1 +1,3 @@
-
+->That provides the financial and economic reports to the owner.<hr>
+->This is used to maintain customers details,new entery of items.<hr>
+->It is used to maintain by the Shop Keepers of the items and billing is easy to do.<hr>
