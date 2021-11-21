@@ -1,11 +1,1 @@
-STRENGTH:<br>
-        ->It will reduce the Man Power and reduce the time.<hr>
-        
-WEAKNESS:<br>
-        ->It is automated but we have to update the items present in the store.<hr>
-        
-THEADS:<br>
-        ->When you entered the input which is not present in database then some there problems will occurs.<hr>
-        
-OPPORTUNITIES:<br>
-        ->It will increase the grass sell of the owner and the man power also reduces.<hr>
+![Swot analysis](https://user-images.githubusercontent.com/77137326/142770692-07e09287-b9e8-4455-ab2e-de4d88f59004.png)
