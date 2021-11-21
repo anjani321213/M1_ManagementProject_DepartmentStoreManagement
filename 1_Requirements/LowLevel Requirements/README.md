@@ -1,2 +1,2 @@
-->Displays the items that are ordered by the customers and invoice the bill.<br>
-->Displays all the item details present in the store.<br>
+->Displays the goods that are ordered by the customers and invoice the bill.<br>
+->Displays all the good details present in the store.<br>
