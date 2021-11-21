@@ -7,12 +7,3 @@
 
 #define ANS 15
 #define ACS 4
-
- 
-
-     
-  
-
-
-
-  
