@@ -8,9 +8,9 @@
 
 
 
-https://api.codiga.io/project/29934/score/svg
+https://api.codiga.io/project/29934/score/svg  ->Code Quality Score
 
 
 
 
-https://api.codiga.io/project/29934/status/svg
+https://api.codiga.io/project/29934/status/svg  ->Code Grade
