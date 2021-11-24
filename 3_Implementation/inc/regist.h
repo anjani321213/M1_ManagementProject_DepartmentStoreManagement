@@ -1,11 +1,5 @@
-/**
- * @file StoreManagement.h
- * @brief 
- * @date 2021-11-22
- * 
- * @copyright Copyright (c) 2021
- * 
- */
+#ifndef _project_main_H_
+#define _project_main_H_
 
 
 #include<stdio.h>
@@ -41,7 +35,7 @@ void d_rate();
 void d_quan();
 void d_all();
 
-
+#endif
 
 
 
