@@ -8,7 +8,7 @@
 
 
 
-https://api.codiga.io/project/29934/score/svg
+[![Code score](https://api.codiga.io/project/29934/score/svg)]
 
 
 
