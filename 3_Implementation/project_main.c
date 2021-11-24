@@ -29,6 +29,7 @@ rec item;
 int main()
 {
     d_mainmenu();
+    d_
     return 0;
 }
 
