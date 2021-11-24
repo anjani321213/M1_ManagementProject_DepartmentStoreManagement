@@ -1,16 +1,16 @@
 # Name of the project
-PROJECT_NAME = hangman
+PROJECT_NAME = project_main
 
 # Output directory
 BUILD = build
 
 # All source code files
-SRC = hangman.c\
-src/hang.c
+SRC = project_main.c\
+src/project_main.c
 
 # All test source files
-TEST_SRC = src/hang.c\
-test/test_hang.c\
+TEST_SRC = src/project_main.c\
+test/test_project_main.c\
 unity/unity.c\
 
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
@@ -53,11 +53,11 @@ test:$(BUILD)
 	./$(TEST_OUTPUT)
 	
 cpp:
-	cppcheck enable=all $(SRC) hangman.c 
+	cppcheck enable=all $(SRC) project_main.c 
 coverageCheck:$(PROJECT_NAME)
 	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(call FixPath,$(TEST_OUTPUT))
 	$(call FixPath,$(TEST_OUTPUT))
-	gcov -a hangman.c
+	gcov -a project_main.c
 
 
 valgrind:
