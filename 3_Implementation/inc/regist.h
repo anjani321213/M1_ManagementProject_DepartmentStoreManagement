@@ -34,7 +34,6 @@ void bill() ;
 void edit();
 void add();
 void del();
-void exit();
 
 
 void d_code();
@@ -43,11 +42,7 @@ void d_quan();
 void d_all();
 
 
-int main()
-{
-    d_mainmenu();
-    return 0;
-}
+
 
 
 
