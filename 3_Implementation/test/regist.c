@@ -1,161 +1,40 @@
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<ctype.h>
-#include<windows.h>
+#include "unity.h"
+#include <regist.h>
 
-#define ANS 15
-#define ACS 4
-//declaration of checking functions/
-void c_code(char[]);
-int check(char[]);
+/* Modify these two lines according to the project */
+#include <regist.h>
+#define PROJECT_NAME    "Store Management System"
+
+/* Prototypes for all the test functions */
+void test_billing(void);
 
 
+/* Required by the unity test framework */
+void setUp(){}
+/* Required by the unity test framework */
+void tearDown(){}
 
-//declaration of display functions/
-void curser(int);
-void dbill();
-void d_mainmenu();
-void display(rec *,int,int);
-void window(int,int,int,int);
-void dis_con();
-void d_search();
-void highlight(int,int);
-
-//declaration of main menu functions/
-void bill() ;
-void edit();
-void add();
-void del();
-void exit();
-
-//declaration of display submenu functions/
-void d_code();
-void d_rate();
-void d_quan();
-void d_all();
-
-//start of main/
+/* Start of the application test */
 int main()
 {
-    d_mainmenu();
-    return 0;
+/* Initiate the Unity Test Framework */
+  UNITY_BEGIN();
+
+/* Run Test functions */
+  RUN_TEST(test_billing);
+
+
+  /* Close the Unity Test Framework */
+  return UNITY_END();
 }
 
-void d_mainmenu()
-{
-    int i;
-    char ch;
-    const char *menu[]= {"   Calculate Bill","   Add Goods","   Edit Goods","   Display All ","   Search", "   Delete Goods","   Exit"};
-    system("cls");
-//textbackground(11);
-//textcolor(0);
-//_setcursortype(_NOCURSOR)
-}
-
-void d_search()
-{
-  
-//textbackground(11);
-//textcolor(0);
+/* Write all the test functions */ 
+void test_billing(void) {
+  TEST_ASSERT_EQUAL(1, open(quan.dat));
+  TEST_ASSERT_EQUAL(2, open(price.dat));
+  TEST_ASSERT_EQUAL(3, open(Invoice.dat));
  
-}
-
-//function for cursor movement/
-void curser(int no)
-{
-   //implementation of curser//
-}
-
-void highlight(int no,int count)
-{
-        //textbackground(11);
-        //textcolor(0);
-}
-
-    
-void bill()
-{
-   //implementation of billing//
-}
-//function to display bill window/
-void dbill()
-{
-//textcolor(1);
-
-//textcolor(8);
-}
-//function to add records/
-void add ()
-{
-//textbackground(11);
-//textcolor(0);
-}
-
-//function to check availability of code/
-void c_code(char y[])
-{
-  //implementation of code//
-}
-
-//function for editing/
-void edit()
-{
-//textcolor(0);
-//textbackground(11);
-}
-
-//function to display all records/
-void d_all()
-{
-  //implementation of diplay all//
-}
-
-//function to display by quantity/
-void d_quan()
-{
-  //implementation of quan//
-}
-
-//function to display by rate/
-void d_rate()
-{
-  //for displaying the rate//
-}
-
-//function to display by code/
-void d_code()
-{
-  //diplay the code//
-}
-
-//function to display window for item display/
-void dis_con()
-{
-   //display window for item display//
-}
-
-
-void display(rec *item,int i,int j)
-{
-//function to display in screen/
-}
-
-
-void del()
-{
-//function to delete records//
-}
-
-
-int check(char x[ANS])
-{
- //function to check validity of code while editing and deleting// 
-}
-
-
-void window(int a,int b,int c,int d)
-{
-  //function to display box//
+    /* Dummy fail*/
+  // TEST_ASSERT_EQUAL(0, file does not exist);
+  
 }
