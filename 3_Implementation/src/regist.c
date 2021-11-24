@@ -1,13 +1,9 @@
 #include<windows.h>
+#include<stdio.h>
 //declaration of checking functions/
 void c_code(char[]);
 int check(char[]);
 //start of main/
-int main()
-{
-    d_mainmenu();
-    return 0;
-}
 
 void d_mainmenu()
 {
