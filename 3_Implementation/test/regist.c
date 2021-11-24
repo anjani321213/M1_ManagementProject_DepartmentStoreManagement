@@ -52,6 +52,7 @@ void d_mainmenu()
 //textbackground(11);
 //textcolor(0);
 //_setcursortype(_NOCURSOR)
+}
 
 void d_search()
 {
