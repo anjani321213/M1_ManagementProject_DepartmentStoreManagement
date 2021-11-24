@@ -4,4 +4,4 @@
 
 
 
-[![code quality score]https://api.codiga.io/project/29934/score/svg]
+[![code quality score](https://api.codiga.io/project/29934/score/svg)]
