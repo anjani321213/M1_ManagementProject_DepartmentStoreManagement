@@ -5,7 +5,7 @@
 
 
 
-![Code grade](ttps://api.codiga.io/project/29934/score/svg)]
+![Code grade](https://api.codiga.io/project/29934/score/svg)]
 
 
 
