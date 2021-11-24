@@ -15,7 +15,7 @@
 #include "stdlib.h"
 
 float amount(float rate, int quan, float dis, float vat);
-int j, quantity, cash, w = 0;
+int j, quan, cash, w = 0;
 long cash_received, newt_amount;
 float rate, dis, vat, t_amount=0, amount1, float_part;
 char itemcode[5], date[20];
