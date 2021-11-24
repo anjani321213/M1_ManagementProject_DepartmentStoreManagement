@@ -1,47 +1,23 @@
-#ifndef _project_main_H_
-#define _project_main_H_
+/**
+ * @file regist.h
+ * @brief 
+ * @date 2021-11-22
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
+#ifndef _regist_H
+#define _regist_H
 
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<ctype.h>
-#include<windows.h>
+#include "stdio.h"
+#include "string.h"
+#include "stdlib.h"
 
-#define ANS 15
-#define ACS 4
-
-void c_code(char[]);
-int check(char[]);
-
-void curser(int);
-void dbill();
-void d_mainmenu();
-void display(rec *,int,int);
-void window(int,int,int,int);
-void dis_con();
-void d_search();
-void highlight(int,int);
-
-void bill() ;
-void edit();
-void add();
-void del();
-
-
-void d_code();
-void d_rate();
-void d_quan();
-void d_all();
+float amount(float rate, int quan, float dis, float vat);
+int j, quantity, cash, w = 0;
+long cash_received, newt_amount;
+float rate, dis, vat, t_amount=0, amount1, float_part;
+char itemcode[5], date[20];
 
 #endif
-
-
-
-
-
-
-
-
-
