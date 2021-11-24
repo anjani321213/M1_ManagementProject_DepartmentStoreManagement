@@ -4,7 +4,7 @@
 
 
 
-![code grade](https://api.codiga.io/project/29934/status/svg)
+[![code grade](https://api.codiga.io/project/29934/status/svg)]
 
 
 
