@@ -1,6 +1,6 @@
 # M1_ManagementProject_DepartmentStoreManagement
 
-![code quality score]https://api.codiga.io/project/29934/score/svg
+![code quality score](https://api.codiga.io/project/29934/score/svg)
 
 
 
