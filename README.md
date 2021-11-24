@@ -8,3 +8,7 @@
 
 
 ![Code quality score](https://api.codiga.io/project/29934/score/svg)]
+
+
+
+![Code grade](https://api.codiga.io/project/29934/status/svg)]
