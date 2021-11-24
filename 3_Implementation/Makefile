@@ -1,5 +1,5 @@
 PROJ_NAME = DepartmentStoreManagement
-SRC = Calendar.c
+SRC = regist.c
 
 #To check if the OS is windows or linux and set the executable file extension and delete command accordingly
 ifdef OS
