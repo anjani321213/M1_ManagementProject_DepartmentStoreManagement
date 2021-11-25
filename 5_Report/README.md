@@ -36,9 +36,16 @@ HOW:<br>
  High Level Requriments:
  
 ->This project help in fast billing and Reduces time.<br>
-->To Collect and maintain the data of customers for purchased goods.<br>
+->To Collect and maintain the data of customers for purchased goods.<hr>
 
 Low Level Requirments:
 
 ->Displays the goods that are ordered by the customers and invoice the bill.<br>
-->Displays all the good details present in the store.<br>
+->Displays all the good details present in the store.<hr>
+
+
+Identifying Features:
+
+->That provides the financial and economic reports to the owner.<br>
+->This is used to maintain customers details,new entery of goods.<br>
+->It is used to maintain by the Shop Keepers of the goods and billing is easy to do.<hr>
