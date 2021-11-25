@@ -1,211 +1,823 @@
 /* Customer Billing System*/
 #include<stdio.h>
+#include<conio.h>
 #include<stdlib.h>
 #include<string.h>
-float amount(float rate, int quan, float dis, float vat);
-void main()
+#include<ctype.h>
+#include<windows.h>
+
+#define ANS 15
+#define ACS 4
+COORD coord= {0,0}; // this is global variable
+void gotoxy(int x,int y)
 {
-	system("clear");
-	int j, quan, cash, w = 0;
-	long cash_received, newt_amount;
-	float rate, dis, vat, t_amount=0, amount1, float_part;
-	char itemcode[5], date[20];
-	printf("\t\t\t\tSUPERMARKET\n");
-	printf("\t\t\t\tAddress line 1\n");
-	printf("\t\t\t\tAddress line 2\n");
-	printf("----------------------------------------------------------------------------------------------------------------\n");
-	printf("    PRODUCTS AVAILABLE AT OUR STORE:\n");
-	printf(" 1. Sunsilk Anti Dandruff Smooth and Silky Shampoo(375ml bottle) @ Rs.290.00\n\t\t@ 25%s discount\t@ 2.5%s VAT\n", "%", "%");
-	printf(" 2. V-Three casual bagpack @ Rs.745.00\n\t\t@ 50%s discount\t@ 10.5%s VAT\n", "%", "%");
-	printf(" 3. Adidas Men's T-Shirt-Red (Size L) @ Rs.275.00\n\t\t@ 30%s discount\t @ 7.25%s VAT\n", "%", "%");
-	printf(" 4. Cadbury Silk Chocolates - Pack Of 10 @ Rs.800.00\n\t\t@ 20%s discount\t @ 9%s VAT\n", "%", "%");
-	printf(" 5. Chings Chinese - Instant Noodles 100 gm @ Rs.10.00\n\t\t\t\t @ 0.25%s VAT\n", "%");
-	printf(" 6. Tupperware water bottle - 750 ml @ Rs.999.00\n\t\t@ 10%s discount\t @ 9.3%s VAT\n", "%", "%");
-	printf(" 7. Sensodyne Cavity Protection Regular Toothpaste Tube (75 ml) @ Rs.93.95\n\t\t@ 2%s discount\t@ 4.5%s VAT\n", "%", "%");
-	printf(" 8. Pepsodent Super-Flexy toothbrush @ Rs.17.00\n\t\t@ 4%s discount\t @ 3%s VAT\n", "%", "%");
-	printf(" 9. Nivia Tennis ball - Pack of 12 @ Rs.810.00\n\t\t@ 12%s discount\t @ 8.75%s VAT\n", "%", "%");
-	printf("10. Sparx Men's Free Trainer 5.0 Outdoor Multisport Training Shoes (Size 8/9/10) @ Rs.8000.00\n\t\t@ 18%s discount\t @ 14%s VAT\n", "%", "%");
-	printf("----------------------------------------------------------------------------------------------------------------\n");
-	printf("DATE:");
-	fgets(date, 20, stdin);
-	printf("\t\t\tCASH MEMO - RETAIL INVOICE\n");
-	printf("----------------------------------------------------------------------------------------------------------------\n");
-	printf("CODE\tITEM NAME\t\t\t\t\t\t\t\t\t\tQUANTITY\n");
-	printf("\t\tAMOUNT(Rs.)\n");
-	printf("----------------------------------------------------------------------------------------------------------------\n");
-	for(j = 1; j!= 0; j++)
-	{
-		fgets(itemcode, 5, stdin);
-		if(strcmp(itemcode, "1\n") == 0)
-		{
-			printf("\tSunsilk Anti Dandruff Smooth and Silky Shampoo(375ml bottle)\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 290.00;
-			dis = 25;
-			vat = 2.5;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "2\n") == 0)
-		{
-			printf("\tV-Three casual bagpack\t\t\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 745.00;
-			dis = 50;
-			vat = 10.5;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "3\n") == 0)
-		{
-			printf("\tAdidas Men's T-Shirt-Red (Size L)\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 275.00;
-			dis = 30;
-			vat = 7.25;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "4\n") == 0)
-		{
-			printf("\tCadbury Silk Chocolates - Pack Of 10\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 800.00;
-			dis = 20;
-			vat = 9;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "5\n") == 0)
-		{
-			printf("\tChings Chinese - Instant Noodles 100gm\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 10.00;
-			dis = 0;
-			vat = 0.25;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "6\n") == 0)
-		{
-			printf("\tTupperware Bottle - 750 ml\t\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 999.00;
-			dis = 10;
-			vat = 9.3;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "7\n") == 0)
-		{
-			printf("\tSensodyne Cavity Protection Regular Toothpaste Tube (75 ml)\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 93.95;
-			dis = 2;
-			vat = 4.5;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "8\n") == 0)
-		{
-			printf("\tPepsodent Super-Flexy toothbrush\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 17.00;
-			dis = 4;
-			vat = 3;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "9\n") == 0)
-		{
-			printf("\tNivia Tennis ball - Pack of 12\t\t\t\t\t\t\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 810.00;
-			dis = 12;
-			vat = 8.75;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, "10\n") == 0)
-		{
-			printf("\tSparx Men's Free Trainer 5.0 Outdoor Multisport Training Shoes (Size 8/9/10)\t\t   ");
-			scanf("%d", &quan);
-			getchar();
-			rate = 8000.00;
-			dis = 18;
-			vat = 14;
-			amount1 = amount(rate, quan, dis, vat);
-			printf("\t%0.2f\n", amount1);
-			t_amount += amount1;
-			w += quan;
-		}
-		else if(strcmp(itemcode, " \n") == 0)
-		{
-			printf("TOTAL AMOUNT :\t%0.2f\n", t_amount);
-			printf("----------------------------------------------------------------------------------------------------------------\n");
-			j = -1;
-		}
-		else
-		{
-			printf("PRODUCT DOES NOT EXIST\n");
-		}
-	}
-	printf("Total number of items sold = %d\n", w);
-	printf("BALANCE DUE                = %0.2f\n", t_amount);
-	newt_amount = t_amount;
-	float_part = t_amount - newt_amount;
-	if(float_part > 0.50)
-		newt_amount += 1;
-	printf("BALANCE DUE AFTER ROUNDING = %ld\n", newt_amount);
-	A:
-	printf("CASH RECEIVED              = ");
-	scanf("%ld", &cash_received);
-	if(cash_received < newt_amount)
-	{
-		printf("Amount insufficient. Please provide more money.\n");
-		goto A;
-	}
-	printf("CHANGE TO BE RETURNED      = %ld\n", cash_received - newt_amount);
-	printf("----------------------------------------------------------------------------------------------------------------\n");
-	printf("\t\t\tCustomer Care Phone # : 1800 133 6702\n");
-	printf("\t\t\tCustomer Care E-mail : custcare@gmail.com\n");
-	printf("\t\t\tStore Phone # : 080-23316509\n");
-	printf("\n\t\t\tCALL FOR FREE HOME DELIVERY.\n");
-	printf("\n\t\t\t\tNo cash refunds.\n");
-	printf("\t\t\tTerms and conditions apply.*\n");
-	printf("\t\t\t** Thank you for shopping with us **\n");
-	printf("\n*Any goods purchased from us can be exchanged along with presenting the original cash memo within 15 days from the date of purchase on any working day. Any electrical appliance purchased, is eligible for repair under warranty only if the original cash memo is shown.\n");
+    coord.X=x;
+    coord.Y=y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
 }
-float amount(float p, int q, float r, float s)
+void c_code(char[]);
+int check(char[]);
+
+typedef struct
 {
-	float z;
-	z = ((p * q) - (p * q * r / 100)) + (((p * q) - (p * q * r / 100)) * s / 100);
-	return z;
+    char name[ANS],code[ACS];
+    float rate;
+    int quantity;
+} rec;
+rec item;
+
+void curser(int);
+void dbill();
+void d_mainmenu();
+void display(rec *,int,int);
+void window(int,int,int,int);
+void dis_con();
+void d_search();
+void highlight(int,int);
+
+void bill() ;
+void edit();
+void add();
+void del();
+void exit();
+
+
+void d_code();
+void d_rate();
+void d_quan();
+void d_all();
+
+
+int main()
+{
+    d_mainmenu();
+    return 0;
+}
+
+void d_mainmenu()
+{
+    int i;
+    char ch;
+    const char *menu[]= {"   Calculate Bill","   Add Goods","   Edit Goods","   Display All ","   Search", "   Delete Goods","   Exit"};
+    system("cls");
+//textbackground(11);
+//textcolor(0);
+//_setcursortype(_NOCURSOR);
+    window(25,50,20,32);
+    gotoxy(33,18);
+    printf("MAIN MENU");
+    for (i=0; i<=6; i++)
+    {
+        gotoxy(30,22+i+1);
+        printf("%s\n\n\n",menu[i]);
+    }
+    curser(7);
+}
+
+void d_search()
+{
+    char ch;
+    int i;
+    const char *menu[]= {"   By Code","   By Rate","   By Quantity","   Back to main menu"};
+    system("cls");
+//textbackground(11);
+//textcolor(0);
+    window(25,50,20,32);
+    gotoxy(33,18);
+    printf("SEARCH MENU");
+    for (i=0; i<=3; i++)
+    {
+        gotoxy(30,22+i+1);
+        printf("%s\n\n\n",menu[i]);
+    }
+    curser(4);
+}
+
+
+void curser(int no)
+{
+    int count=1;
+    char ch='0';
+    gotoxy(30,23);
+    while(1)
+    {
+        switch(ch)
+        {
+        case 80:
+            count++;
+            if (count==no+1) count=1;
+            break;
+        case 72:
+            count--;
+            if(count==0) count=no;
+            break;
+        }
+        highlight(no,count);
+        ch=getch();
+        if(ch=='\r')
+        {
+            if(no==7)
+            {
+                if (count==1) bill() ;
+                else if(count==2) add();
+                else if(count==3) edit();
+                else if (count==4) d_all();
+                else if (count==5) d_search();
+                else if (count==6) del();
+                else   exit(0);
+            }
+            if(no==4)
+            {
+                if (count==1) d_code();
+                else if (count==2)d_rate();
+                else if (count==3) d_quan();
+                else d_mainmenu();
+            }
+        }
+    }
+}
+
+void highlight(int no,int count)
+{
+    if (no==4)
+    {
+        //textbackground(11);
+        //textcolor(0);
+        gotoxy(30,23);
+        printf("   By Code          ");
+        gotoxy(30,24);
+        printf("   By Rate          ");
+        gotoxy(30,25);
+        printf("   By Quantity      ");
+        gotoxy(30,26);
+        printf("   Back to main menu");
+        //textcolor(0);
+        //textbackground(2);
+        switch (count)
+        {
+        case 1:
+            gotoxy(30,23);
+            printf(" - By Code          ");
+            break;
+        case 2:
+            gotoxy(30,24);
+            printf(" - By Rate          ");
+            break;
+        case 3:
+            gotoxy(30,25);
+            printf(" - By Quantity      ");
+            break;
+        case 4:
+            gotoxy(30,26);
+            printf(" - Back to main menu");
+            break;
+        }
+    }
+
+    if(no==7)
+    {
+        //textbackground(11);
+        //textcolor(0);
+        gotoxy (30,23);
+        printf("   Calculate Bill ");
+        gotoxy (30,24);
+        printf("   Add Goods      ");
+        gotoxy (30,25);
+        printf("   Edit Goods     ");
+        gotoxy (30,26);
+        printf("   Display All    ");
+        gotoxy (30,27);
+        printf("   Search         ");
+        gotoxy (30,28);
+        printf("   Delete Goods   ");
+        gotoxy (30,29);
+        printf("   Exit           ");
+        //textcolor(0);
+        //textbackground(2);
+        switch(count)
+        {
+        case 1:
+            gotoxy (30,23);
+            printf(" - Calculate Bill ");
+            break;
+        case 2:
+            gotoxy (30,24);
+            printf(" - Add Goods      ");
+            break;
+        case 3:
+            gotoxy (30,25);
+            printf(" - Edit Goods     ");
+            break;
+        case 4:
+            gotoxy (30,26);
+            printf(" - Display All    ");
+            break;
+        case 5:
+            gotoxy (30,27);
+            printf(" - Search         ");
+            break;
+        case 6:
+            gotoxy (30,28);
+            printf(" - Delete Goods   ");
+            break;
+        case 7:
+            gotoxy (30,29);
+            printf(" - Exit           ");
+            break;
+        }
+    }
+}
+
+void bill()
+{
+    char x[4]= {0};
+    int j=29,q=0,size=0,i=1;
+    float total=0,gtotal=0;
+    FILE *file;
+    file=fopen("record.txt","r+b");
+    rewind(file);
+    system("cls");
+    dbill();
+    gotoxy(26,15);
+    printf("enter  \"end\" to finish input");
+    while(1)
+    {
+        gotoxy(25,18);
+        printf("                    ");
+        gotoxy(25,19);
+        printf("                    ");
+        gotoxy(25,18);
+        printf("enter item code:");
+        scanf("%s",x);
+        if(strcmp(x,"end")==0)
+            break;
+        gotoxy(25,19);
+        printf("enter quantity:");
+        scanf("%d",&q);
+        rewind(file);
+        while(fread(&item,sizeof(item),1,file))
+        {
+            if((strcmp(item.code,x)==0))
+            {
+                total=item.rate*q;
+                gotoxy(11,j);
+                printf("%4d",i);
+                printf("%9s",item.name);
+                printf("%13d",q);
+                printf("%15.2f",item.rate);
+                printf("%13.2f",total);
+                gtotal=gtotal+total;
+                size=sizeof(item);
+                item.quantity=item.quantity-q;
+                j+=2;
+                i++;
+                fseek(file,-size,SEEK_CUR);
+                fwrite(&item,sizeof(item),1,file);
+                break;
+            }
+        }
+    }
+    if(gtotal!=0)
+    {
+        gotoxy(30,j+5);
+        printf("TOTAL AMOUNT = NRs. %6.2f",gtotal);
+    }
+    fclose(file);
+    getch();
+    d_mainmenu();
+}
+
+void dbill()
+{
+    int i;
+    gotoxy(20,10);
+//;
+    for (i=1; i<=10; i++)
+        printf("*");
+    printf(" * FASHION WEAR * ");
+    for (i=1; i<=10; i++)
+        printf("*");
+    printf("\n\n");
+    gotoxy(30,11);
+    printf("Departmental Store");
+//textcolor(1);
+    gotoxy(32,25);
+    printf("CUSTOMER'S BILL") ;
+//textcolor(8);
+    gotoxy(13,27);
+    printf("SN.   Item Name     Quantity     Rate          Total");
+
+}
+
+void add ()
+{
+    FILE *file;
+    char y[ACS],x[12];
+    system("cls");
+//textbackground(11);
+//textcolor(0);
+    gotoxy(25,25);
+    printf("Enter new record(Y/N)?");
+    while(toupper(getche())=='Y')
+    {
+        system("cls");
+        file=fopen("record.txt","ab");
+        c_code(y);
+        strcpy(item.code,y);
+        gotoxy(22,28);
+        printf("Enter rate of the item:");
+        scanf("%f",&item.rate);
+        gotoxy(22,30);
+        printf("Enter quantity of the item:");
+        scanf("%d",&item.quantity);
+        gotoxy(22,32);
+        printf("Enter name of the item:");
+        scanf("%s",item.name);
+        fseek(file,0,SEEK_END);
+        fwrite(&item,sizeof(item),1,file);
+        fclose(file);
+        gotoxy(22,34);
+        printf("Enter new record(Y/N)?");
+
+    }
+    d_mainmenu();
+}
+
+
+void c_code(char y[])
+{
+    int flag;
+    FILE *file;
+    file=fopen("record.txt","rb");
+    while(1)
+    {
+        system("cls");
+        window(20,58,23,36);
+        gotoxy(32,18);
+        printf(" ADD ARTICLES ")  ;
+        flag=1;
+        rewind(file);
+        gotoxy(22,25);
+        printf("Enter new code of the article:");
+        scanf(" %[^\n]",y);
+        while(fread(&item,sizeof(item),1,file)==1)
+        {
+            if (strcmp(y,item.code)==0)
+            {
+                flag=0;
+                gotoxy(26,30);
+                printf("code already exists");
+                gotoxy(29,32);
+                printf("enter again");
+                getch();
+                break;
+            }
+        }
+        if (flag==1)
+            break;
+    }
+}
+
+
+void edit()
+{
+    int flag=0,choice;
+    char x[ACS],y[ACS];
+    FILE *file;
+    int size;
+    system("cls");
+//textcolor(0);
+//textbackground(11);
+    window(20,63,20,46);
+    gotoxy(35,18);
+    printf("EDIT RECORDS");
+    ;
+    gotoxy(25,23);
+    printf("enter item code: ");
+    scanf("%s",x);
+    flag=check(x);
+    if(flag==0)
+    {
+        file=fopen("record.txt","r+b");
+        rewind(file);
+        while (fread(&item,sizeof (item),1,file))
+        {
+            if(strcmp(item.code,x)==0)
+            {
+                //textcolor(0);
+                gotoxy(25,27);
+                printf("name       = %s",item.name);
+                gotoxy(25,28);
+                printf("code       = %s",item.code);
+                gotoxy(25,29);
+                printf("rate       = %g",item.rate);
+                gotoxy(25,30);
+                printf("quantity   = %d",item.quantity);
+                gotoxy(25,32);;
+                printf("Do you want to edit this record?(y/n):");
+                fflush(file);
+                if(toupper(getche())=='Y')
+                {
+                    //textcolor(0);
+                    gotoxy(25,34);
+                    printf("1- edit name ");
+                    gotoxy(25,35);
+                    printf("2- edit code ");
+                    gotoxy(25,36);
+                    printf("3- edit rate ");
+                    gotoxy(25,37);
+                    printf("4- edit quantity ");
+                    gotoxy(25,39);  ;
+                    printf(" enter your choice(1, 2, 3, 4) ");
+                    scanf("%d",&choice);
+                    switch(choice)
+                    {
+                    case 1:
+                        system("cls");
+                        window(23,48,20,40);
+                        gotoxy(35,18);
+                        printf("EDIT RECORDS");
+                        gotoxy(25,24);
+                        printf(" enter new name: ");
+                        scanf("%s",item.name);
+                        size=sizeof(item);
+                        fseek(file,-size,SEEK_CUR);
+                        fwrite(&item,sizeof(item),1,file);
+                        break;
+                    case 2:
+                        system("cls");
+                        window(23,65,20,40);
+                        gotoxy(35,18);
+                        printf("EDIT RECORDS");
+                        gotoxy(25,24);
+                        c_code(y);
+                        strcpy(item.code,y);
+                        size=sizeof(item);
+                        fseek(file,-size,SEEK_CUR);
+                        fwrite(&item,sizeof(item),1,file);
+                        break;
+                    case 3:
+                        system("cls");
+                        window(23,65,20,40);
+                        gotoxy(35,18);
+                        printf("EDIT RECORDS");
+                        gotoxy(25,24);
+                        printf(" enter new rate: ");
+                        scanf("%f",&item.rate);
+                        size=sizeof(item);
+                        fseek(file,-size,SEEK_CUR);
+                        fwrite(&item,sizeof(item),1,file);
+                        break;
+                    case 4:
+                        system("cls");
+                        window(23,65,20,40);
+                        gotoxy(35,18);
+                        printf("EDIT RECORDS");
+                        gotoxy(25,24);
+                        printf(" enter new quantity: ");
+                        scanf("%d",&item.quantity);
+                        size=sizeof(item);
+                        fseek(file,-size,1);
+                        fwrite(&item,sizeof(item),1,file);
+                        break;
+                    }
+                    gotoxy(27,30);
+                    printf("--- item edited---");
+                    break;
+                }
+            }
+        }
+    }
+    if (flag==1)
+    {
+        gotoxy(32,30);
+        printf("Item does not exist.");
+        gotoxy(36,32);
+        printf("TRY ABGAIN");
+    }
+    getch();
+    fclose(file);
+    d_mainmenu();
+}
+
+
+void d_all()
+{
+    int i,j=1;
+    FILE *file;
+    dis_con();
+    file=fopen("record.txt","rb");
+    rewind(file);
+    i=26;
+    fflush(file);
+    while(fread(&item,sizeof(item),1,file))
+    {
+        display(&item,i,j);
+        i++;
+        j++;
+        if ((j%20)==0)
+        {
+            gotoxy(27,47);
+            printf("Press any key to see more...........");
+            getch();
+            system("cls");
+            dis_con();
+            i=26;
+            continue;
+        }
+    }
+    getch();
+    if (i==26)
+    {
+        gotoxy(24,30);
+        printf("-- no articles found --");
+    }
+    getch();
+    fclose(file);
+    d_mainmenu();
+}
+
+
+void d_quan()
+{
+    int i,j=1;
+    int a,b;
+    FILE *file;
+    dis_con();
+    file=fopen("record.txt","rb");
+    rewind(file);
+    i=26;
+    gotoxy(16,20);;
+    printf("Enter lower range: ");
+    scanf("%d",&a);
+    gotoxy(16,21);
+    printf("Enter upper range:");
+    scanf("%d",&b);
+    fflush(file);
+    while(fread(&item,sizeof(item),1,file))
+    {
+        if((item.quantity>=a)&&(item.quantity<=b))
+        {
+            display(&item,i,j);
+            i++;
+            j++;
+            if ((j%20)==0)
+            {
+                gotoxy(27,47);
+                printf("Press any key to see more...........");
+                getch();
+                system("cls");
+                dis_con();
+                i=26;
+                continue;
+            }
+        }
+    }
+    getch();
+    if (i==26)
+    {
+        gotoxy(28,30);
+        printf(" No items found.");
+    }
+    getch();
+    d_search();
+    fclose(file);
+}
+
+
+void d_rate()
+{
+    int i,j=1;
+    float a,b;
+    FILE *file;
+    dis_con();
+    file=fopen("record.txt","rb");
+    rewind(file);
+    i=26;
+    gotoxy(16,20);;
+    printf("enter lower range: ");
+    scanf("%f",&a);
+    gotoxy(16,21);
+    printf("enter upper range: ");
+    scanf("%f",&b);
+    fflush(file);
+    while(fread(&item,sizeof(item),1,file))
+    {
+        if((item.rate>=a)&&(item.rate<=b))
+        {
+            display(&item,i,j);
+            i++;
+            j++;
+            if ((j%20)==0)
+            {
+                gotoxy(27,47);
+                printf("press any key to see more...........");
+                getch();
+                system("cls");
+                dis_con();
+                i=26;
+                continue;
+            }
+        }
+    }
+    getch();
+    if (i==26)
+    {
+        gotoxy(28,30);
+        printf(" no item found ");
+    }
+    getch();
+    fclose(file);
+    d_search();
+}
+
+
+void d_code()
+{
+    int i,j=1;
+    char x[4]= {0};
+    FILE *file;
+    dis_con();
+    file=fopen("record.txt","rb");
+    rewind(file);
+    i=26;
+    gotoxy(16,20);;
+    printf("enter item code: ");
+    scanf("%s",x);
+    fflush(file);
+    while(fread(&item,sizeof(item),1,file))
+    {
+        if((strcmp(item.code,x)==0))
+        {
+            display(&item,i,j);
+            i++;
+            j++;
+            break;
+        }
+    }
+    if (i==26)
+    {
+        gotoxy(28,30);
+        printf("no item found");
+    }
+    getch();
+    fclose(file);
+    d_search();
+}
+
+
+void dis_con()
+{
+    int i;
+    system("cls");
+    gotoxy(20,10);
+    ;
+    for (i=1; i<=10; i++)
+        printf("*");
+    printf(" * FASHION WEAR * ");
+    for (i=1; i<=10; i++)
+        printf("*");
+    printf("\n\n");
+    gotoxy(30,11);
+    printf("Departmental Store");
+//textcolor(1);
+    gotoxy(32,17);
+    printf("RECORDS") ;
+//textcolor(8);
+    gotoxy(18,23);
+    printf ("SN   Item Name   Item Code      Rate     Quantity");
+}
+
+
+void display(rec *item,int i,int j)
+{
+    gotoxy(16,i);//textcolor(13);
+    printf("%4d",j);
+    printf("%9s",item->name);
+    printf("%12s",item->code);
+    printf("%14.2f",item->rate);
+    printf("%11d",item->quantity);
+}
+
+
+void del()
+{
+    int flag;
+    char x[ANS];
+    FILE *file,*file1;
+    system("cls");
+//textbackground(11);
+//textcolor(0);
+    window(23,51,25,34);
+    gotoxy(29,18);
+    printf("DELETE ARTICLES");
+    gotoxy(27,27);
+    printf("enter item code: ");
+    scanf("%s",x);
+    flag=check(x);
+    if(flag==0)
+    {
+        file1=fopen("record1.txt","ab");
+        file=fopen("record.txt","rb");
+        rewind(file);
+        while (fread(&item,sizeof (item),1,file))
+        {
+            if(strcmp(item.code,x)!=0)
+                fwrite(&item,sizeof(item),1,file1);
+        }
+        gotoxy(27,29);
+        printf("---item deleted---");
+        remove("record.txt");
+        rename("record1.txt","record.txt");
+    }
+    if (flag==1)
+    {
+        gotoxy(25,29);
+        printf("---item does not exist---");
+        gotoxy(30,31);
+        printf("TRY AGAIN");
+    }
+    fclose(file1);
+    fclose(file);
+    getch();
+    d_mainmenu();
+}
+
+
+int check(char x[ANS])
+{
+    FILE *file;
+    int flag=1;
+    file=fopen("record.txt","rb");
+    rewind(file);
+    while (fread(&item,sizeof (item),1,file))
+    {
+        if(strcmp(item.code,x)==0)
+        {
+            flag=0;
+            break;
+        }
+    }
+    fclose(file);
+    return flag;
+}
+
+
+void window(int a,int b,int c,int d)
+{
+    int i;
+    system("cls");
+    gotoxy(20,10);
+//textcolor(1);
+    for (i=1; i<=10; i++)
+        printf("*");
+    printf(" * FASHION WEAR * ");
+    for (i=1; i<=10; i++)
+        printf("*");
+    printf("\n\n");
+    gotoxy(30,11);
+    printf("Departmental Store");
+//textcolor(4);
+    for (i=a; i<=b; i++)
+    {
+        gotoxy(i,17);
+        printf("\xcd");
+        gotoxy(i,19);
+        printf("\xcd");
+        gotoxy(i,c);
+        printf("\xcd");
+        gotoxy(i,d);
+        printf("\xcd");
+    }
+
+    gotoxy(a,17);
+    printf("\xc9");
+    gotoxy(a,18);
+    printf("\xba");
+    gotoxy(a,19);
+    printf("\xc8");
+    gotoxy(b,17);
+    printf("\xbb");
+    gotoxy(b,18);
+    printf("\xba");
+    gotoxy(b,19);
+    printf("\xbc");
+//textcolor(4);
+    for(i=c; i<=d; i++)
+    {
+        gotoxy(a,i);
+        printf("\xba");
+        gotoxy(b,i);
+        printf("\xba");
+    }
+    gotoxy(a,c);
+    printf("\xc9");
+    gotoxy(a,d);
+    printf("\xc8");
+    gotoxy(b,c);
+    printf("\xbb");
+    gotoxy(b,d);
+    printf("\xbc");
+//textbackground(11);
+//textcolor(0);
 }
