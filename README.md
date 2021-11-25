@@ -8,9 +8,9 @@
 
 
 
-[![Code Grade](https://api.codiga.io/project/29934/score/svg  ->Code Quality Score)]
+[![Code Grade](https://api.codiga.io/project/29934/score/svg)]
 
 
 
 
-[![Code quality](https://api.codiga.io/project/29934/status/svg  ->Code Grade)]
+[![Code quality](https://api.codiga.io/project/29934/status/svg)]
