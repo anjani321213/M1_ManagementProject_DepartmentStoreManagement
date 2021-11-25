@@ -33,6 +33,12 @@ HOW:<br>
     ->This application is for Ordering and billing of Departmental store<hr>
     
     
-    
+ High Level Requriments:
+ 
 ->This project help in fast billing and Reduces time.<br>
-->To Collect and maintain the data of customers for purchased goods.<br>    
+->To Collect and maintain the data of customers for purchased goods.<br>
+
+Low Level Requirments:
+
+->Displays the goods that are ordered by the customers and invoice the bill.<br>
+->Displays all the good details present in the store.<br>
