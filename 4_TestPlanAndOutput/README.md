@@ -7,11 +7,11 @@ OUTPUT:
 MainMenu:![image png](https://user-images.githubusercontent.com/77137326/143384267-d44ec134-7d0d-44c2-a75d-d4eb9133d897.jpeg)
 
 
-Display ALL Records:
+Edit Records:
 ![image1 png](https://user-images.githubusercontent.com/77137326/143384370-b4bdc6e7-6935-41a7-b382-c022f67a1cc2.jpeg)
 
 
-Edit Records:
+Display All Records:
 ![image2 png](https://user-images.githubusercontent.com/77137326/143384438-eb906a81-600f-4a38-8cb2-79a82a805628.jpeg)
 
 
