@@ -31,3 +31,8 @@ WHEN:<br>
     
 HOW:<br>
     ->This application is for Ordering and billing of Departmental store<hr>
+    
+    
+    
+->This project help in fast billing and Reduces time.<br>
+->To Collect and maintain the data of customers for purchased goods.<br>    
