@@ -49,3 +49,20 @@ Identifying Features:
 ->That provides the financial and economic reports to the owner.<br>
 ->This is used to maintain customers details,new entery of goods.<br>
 ->It is used to maintain by the Shop Keepers of the goods and billing is easy to do.<hr>
+
+
+Identiying the requirments:
+
+->HARDWARE REQUIREMENTS:<br>
+             ->Intel Processor<br>
+             ->RAM 4GB<br>
+             ->Windows10 or Linux<br>
+             
+             
+             
+->SOFTWARE REQUIREMENTS:<br>
+            ->Google Chrome<br>
+            ->Github<br>
+   
+->LANGUAGE USED:C Language<hr>
+
